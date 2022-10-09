@@ -20,7 +20,7 @@ pipeline {
                 echo "Clonning Repository"
 
                 git url: "https://github.com/ojj1123/cicd-study.git",
-                branch: 'maintain',
+                branch: 'main',
                 credentialsId: 'git-test-jenkins'
             }
 
