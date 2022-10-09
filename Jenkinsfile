@@ -5,7 +5,7 @@ pipeline {
         pollSCM('*/3 * * * *')
     }
 
-    environments {
+    environment {
         AWS_ACCESS_KEY_ID = credentials('awsAccessKeyId')
         AWS_SECRET_ACCESS_KEY = credentials('awsSecretAccessKey')
         AWS_DEFAULT_REGION = 'ap-northeast-2'
@@ -54,7 +54,7 @@ pipeline {
                     echo 'Successfully cloned Repository'
 
                     mail to: 'rojay.developer@gmail.com',
-                    sbject: 'Deploying Frontend Success',
+                    subject: 'Deploying Frontend Success',
                     body: 'Successfully deployed frontend!'
                 }
                 
@@ -62,7 +62,7 @@ pipeline {
                     echo 'I filed :('
 
                     mail to: 'rojay.developer@gmail.com',
-                    sbject: 'Failed Pipeline',
+                    subject: 'Failed Pipeline',
                     body: 'Something is wrong deploy frontend!'
                 }
 
