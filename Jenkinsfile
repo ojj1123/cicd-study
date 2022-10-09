@@ -17,7 +17,6 @@ pipeline {
             agent any
 
             steps {
-                echo "Lets start long Journey! ENV: ${ENV}"
                 echo "Clonning Repository"
 
                 git url: "https://github.com/ojj1123/cicd-study.git",
@@ -132,7 +131,6 @@ pipeline {
 
                 dir ('./server'){
                     sh '''
-                    docker rm -f $(docker ps -aq)
                     docker run -p 80:80 -d server
                     '''
                 }
